@@ -1,0 +1,31 @@
+-- SELECT
+SELECT * FROM productos;
+
+SELECT * FROM fabricantes;
+
+SELECT p.codigo AS codigo_producto, p.nombre AS nombre_producto, p.precio, f.nombre AS fabricante
+FROM productos p
+INNER JOIN fabricantes f ON p.codigo_fabricante = f.codigo;
+
+-- INSERT
+INSERT INTO productos (codigo, nombre, precio, codigo_fabricante)
+VALUES ('001', 'Producto1', 500, 'FAB001');
+
+INSERT INTO fabricantes (codigo, nombre)
+VALUES ('FAB002', 'Fabricante2');
+
+-- UPDATE
+UPDATE productos
+SET precio = 550
+WHERE codigo = '001';
+
+UPDATE fabricantes
+SET nombre = 'Nuevo Fabricante'
+WHERE codigo = 'FAB002';
+
+-- DELETE
+DELETE FROM productos
+WHERE codigo = '001';
+
+DELETE FROM fabricantes
+WHERE codigo = 'FAB002';
